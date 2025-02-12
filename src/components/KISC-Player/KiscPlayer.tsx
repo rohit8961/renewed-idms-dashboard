@@ -17,7 +17,22 @@ interface StaffData {
     bloodGroup?: string;
     emergencyContactNo?: string;
 }
-
+const customStyles = {
+    headCells: {
+        style: {
+            backgroundColor: 'var(--color-gray-2)',
+            color: 'var(--color-black)',
+            fontWeight: 'bold',
+            textTransform: 'uppercase' as 'uppercase',
+        },
+    },
+    cells: {
+        style: {
+            backgroundColor: '#f9f5f4',
+            color: 'black',
+        },
+    },
+};
 
 
 
@@ -117,6 +132,7 @@ const KiscPlayer: React.FC = () => {
                     pagination
                     striped
                     className="rounded"
+                    customStyles={customStyles}
                 />
             </div>
 

@@ -175,8 +175,8 @@ const Agency = () => {
         },
         cells: {
             style: {
-                backgroundColor: 'var(--color-white)',
-                color: 'var(--color-black)',
+                backgroundColor: '#f9f5f4',
+                color: 'red',
             },
         },
     };

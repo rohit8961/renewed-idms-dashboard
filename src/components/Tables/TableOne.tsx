@@ -167,8 +167,8 @@ const TableOne = () => {
       name: 'Source',
       cell: (row: any) => (
         <div className="flex items-center gap-3">
-          <img src={row.logo} alt="Brand" className="flex-shrink-0" />
-          <p className="hidden text-black dark:text-white sm:block">{row.name}</p>
+          <img src={row.logo} alt="Brand" className="flex-shrink-0 w-10 h-10 rounded-full" />
+          <p className="text-black dark:text-white">{row.name}</p>
         </div>
       ),
       sortable: true,
@@ -226,23 +226,45 @@ const TableOne = () => {
   const customStyles = {
     headCells: {
       style: {
-        backgroundColor: 'var(--color-gray-2)',
-        color: 'var(--color-black)',
+        backgroundColor: '#f3f4f6',
+        color: '#374151',
         fontWeight: 'bold',
         textTransform: 'uppercase' as 'uppercase',
+        fontSize: '14px',
+        padding: '10px',
       },
     },
     cells: {
       style: {
-        backgroundColor: 'var(--color-white)',
-        color: 'var(--color-black)',
+        backgroundColor: '#ffffff',
+        color: '#1f2937',
+        fontSize: '14px',
+        padding: '10px',
+      },
+    },
+    rows: {
+      style: {
+        minHeight: '72px', // override the row height
+        '&:not(:last-of-type)': {
+          borderBottomStyle: 'solid' as 'solid',
+          borderBottomWidth: '1px' as '1px',
+          borderBottomColor: '#e5e7eb' as '#e5e7eb',
+        },
+      },
+    },
+    pagination: {
+      style: {
+        borderTopStyle: 'solid' as 'solid',
+        borderTopWidth: '1px',
+        borderTopColor: '#e5e7eb',
+        padding: '10px',
       },
     },
   };
 
   return (
-    <div className="rounded-sm border border-stroke bg-white px-5 pt-6 pb-2.5 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:pb-1">
-      <h4 className="mb-6 text-xl font-semibold text-black dark:text-white">
+    <div className="rounded-lg border border-stroke bg-white px-5 pt-6 pb-2.5 shadow-lg dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:pb-1">
+      <h4 className="mb-6 text-2xl font-semibold text-black dark:text-white">
         Top Channels
       </h4>
       <DataTable
@@ -250,6 +272,8 @@ const TableOne = () => {
         data={brandData}
         customStyles={customStyles}
         pagination
+        highlightOnHover
+        pointerOnHover
       />
     </div>
   );
