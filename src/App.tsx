@@ -22,6 +22,8 @@ import Agency from './components/Tables/Agency';
 import Games from './components/Tables/Games';
 import BssaStaff from './components/BSSA-Staff/BssaStaff';
 import EmpAgency from './components/EMP-Agency/EmpAgency';
+import KiscStaff from './components/KISC-Staff/KiscStaff';
+import KiscPlayer from './components/KISC-Player/KiscPlayer';
 
 function App() {
   const [loading, setLoading] = useState<boolean>(true);
@@ -165,7 +167,7 @@ function App() {
             path="/games"
             element={
               <>
-                <PageTitle title="Agency data" />
+                <PageTitle title="Games data" />
                 <Games />
               </>
             }
@@ -174,7 +176,7 @@ function App() {
             path="/bssa-staff"
             element={
               <>
-                <PageTitle title="Agency data" />
+                <PageTitle title="Bssa staff data" />
                 <BssaStaff />
               </>
             }
@@ -183,8 +185,26 @@ function App() {
             path="/emp-agency"
             element={
               <>
-                <PageTitle title="Agency data" />
+                <PageTitle title="Empanelled agency data" />
                 <EmpAgency />
+              </>
+            }
+          />
+          <Route
+            path="/kisc-staff"
+            element={
+              <>
+                <PageTitle title="Kisc staff data" />
+                <KiscStaff />
+              </>
+            }
+          />
+          <Route
+            path="/kisc-player"
+            element={
+              <>
+                <PageTitle title="Kisc player data" />
+                <KiscPlayer />
               </>
             }
           />

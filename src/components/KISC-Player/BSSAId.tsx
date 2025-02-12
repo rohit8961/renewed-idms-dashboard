@@ -1,15 +1,15 @@
 import React, { useEffect, useRef, useState } from "react";
 import { jsPDF } from "jspdf";
 import html2canvas from "html2canvas";
-import image from "../../assets/emp-agency.png";
+import image from "../../assets/KISC Player id card-Photoroom.png";
 import { FaDownload } from "react-icons/fa6";
 
 interface StaffData {
     UID: string;
     name: string;
-    designation: string;
-    organization: string;
+    sport: string;
     mobileNumber: string;
+
     dob?: string;
     bloodGroup?: string;
     emergencyContactNo?: string;
@@ -20,7 +20,7 @@ interface BssaStaffCardProps {
     staffData: StaffData;
 }
 
-const EmpAgencyCard: React.FC<BssaStaffCardProps> = ({ staffData }) => {
+const BssaStaffCard: React.FC<BssaStaffCardProps> = ({ staffData }) => {
     const cardRef = useRef<HTMLDivElement>(null);
     const [profileImage, setProfileImage] = useState<string | null>(null);
 
@@ -100,16 +100,16 @@ const EmpAgencyCard: React.FC<BssaStaffCardProps> = ({ staffData }) => {
                         <img
                             src={profileImage}
                             alt="Profile"
-                            className="absolute top-[116px] left-[101px] w-[167px] h-[162px] rounded-full border-2 border-white"
+                            className="absolute top-[117px] left-[115.5px] w-[166px] h-[161px] rounded-full border-2 border-white"
                         />
                     )}
 
                     {/* Staff Details */}
-                    <div className="absolute top-[285px] left-[75px] text-black text-[12.5px] font-semibold">
+                    <div className="absolute top-[295px] left-[75px] text-black text-[12.5px] font-semibold">
                         <span>UID: {staffData.UID}</span> <br />
                         <span>Name: {staffData.name}</span><br />
-                        <span>Organization: {staffData.organization}</span><br />
-                        <span>Designation: {staffData.designation}</span><br />
+                        <span>Sport: {staffData.sport}</span><br />
+
                         <span>Mobile No: {staffData.mobileNumber}</span><br />
                         <span>DOB: {staffData.dob}</span><br />
                         <span>Blood Group: {staffData.bloodGroup}</span><br />
@@ -126,4 +126,4 @@ const EmpAgencyCard: React.FC<BssaStaffCardProps> = ({ staffData }) => {
     );
 };
 
-export default EmpAgencyCard;
+export default BssaStaffCard;
